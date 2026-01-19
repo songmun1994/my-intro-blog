@@ -45,3 +45,6 @@ db-local.properties
 # Logs
 logs/
 *.log
+
+# local secrets
+src/main/resources/db_connect.properties

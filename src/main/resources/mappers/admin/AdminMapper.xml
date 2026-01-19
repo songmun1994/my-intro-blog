@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myhome.myintro.admin.mapper.AdminMapper">
+
+    <select id="countByAdminId" resultType="int">
+        SELECT COUNT(1)
+        FROM tb_admin
+        WHERE admin_id = #{adminId}
+          AND del_yn = 'N'
+    </select>
+
+    <insert id="insertAdmin" parameterType="com.myhome.myintro.admin.dto.AdminInsertDTO">
+        INSERT INTO tb_admin
+        (
+            admin_id,
+            admin_password,
+            admin_name,
+            admin_group,
+            admin_email,
+            use_yn,
+            del_yn,
+            reg_date,
+            reg_id,
+            reg_name
+        )
+        VALUES
+            (
+                #{adminId},
+                #{adminPassword},
+                #{adminName, jdbcType=VARBINARY},
+                #{adminGroup},
+                #{adminEmail, jdbcType=VARBINARY},
+                #{useYn},
+                #{delYn},
+                NOW(),
+                #{regId},
+                #{regName}
+            )
+    </insert>
+
+</mapper>
