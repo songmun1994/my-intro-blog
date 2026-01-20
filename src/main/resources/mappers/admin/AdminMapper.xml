@@ -5,14 +5,16 @@
 
 <mapper namespace="com.myhome.myintro.admin.mapper.AdminMapper">
 
-    <select id="countByAdminId" resultType="int">
-        SELECT COUNT(1)
+    <!-- ====== 아이디 중복 체크 ====== -->
+    <select id="countByAdminId" parameterType="string" resultType="int">
+        SELECT COUNT(*)
         FROM tb_admin
         WHERE admin_id = #{adminId}
           AND del_yn = 'N'
     </select>
 
-    <insert id="insertAdmin" parameterType="com.myhome.myintro.admin.dto.AdminInsertDTO">
+    <!-- ====== 관리자 등록 ====== -->
+    <insert id="insertAdmin" parameterType="com.myhome.myintro.admin.dto.AdminDTO">
         INSERT INTO tb_admin
         (
             admin_id,
@@ -23,6 +25,7 @@
             use_yn,
             del_yn,
             reg_date,
+            reg_idx,
             reg_id,
             reg_name
         )
@@ -30,15 +33,66 @@
             (
                 #{adminId},
                 #{adminPassword},
-                #{adminName, jdbcType=VARBINARY},
+                #{adminName},
                 #{adminGroup},
-                #{adminEmail, jdbcType=VARBINARY},
+                #{adminEmail},
                 #{useYn},
-                #{delYn},
+                'N',
                 NOW(),
+                #{regIdx},
                 #{regId},
                 #{regName}
             )
+    </insert>
+
+    <!-- ====== 로그인 정보 조회 ====== -->
+    <select id="selectLoginInfo"
+            parameterType="com.myhome.myintro.admin.dto.AdminDTO"
+            resultType="com.myhome.myintro.admin.dto.AdminDTO">
+        SELECT
+            admin_idx        AS adminIdx,
+            admin_id         AS adminId,
+            admin_name         AS adminName,
+            admin_email         AS adminEmail,
+            admin_password   AS adminPassword,
+            admin_group      AS adminGroup,
+            use_yn           AS useYn,
+            del_yn           AS delYn,
+            login_fail_cnt   AS loginFailCnt,
+            last_login_date  AS lastLoginDate
+        FROM tb_admin
+        WHERE admin_id = #{adminId}
+          AND del_yn = 'N'
+            LIMIT 1
+    </select>
+
+    <update id="increaseLoginFail" parameterType="com.myhome.myintro.admin.dto.AdminDTO">
+        UPDATE tb_admin
+        SET login_fail_cnt = login_fail_cnt + 1
+        WHERE admin_id = #{adminId}
+          AND del_yn = 'N'
+    </update>
+
+    <update id="resetLoginFail" parameterType="com.myhome.myintro.admin.dto.AdminDTO">
+        UPDATE tb_admin
+        SET login_fail_cnt = 0
+        WHERE admin_id = #{adminId}
+          AND del_yn = 'N'
+    </update>
+
+    <update id="updateLastLoginDate" parameterType="com.myhome.myintro.admin.dto.AdminDTO">
+        UPDATE tb_admin
+        SET last_login_date = NOW()
+        WHERE admin_id = #{adminId}
+          AND del_yn = 'N'
+    </update>
+
+    <!-- ====== 로그인 시도 로그 ====== -->
+    <insert id="insertLoginLog" parameterType="com.myhome.myintro.admin.dto.AdminLoginLogDTO">
+        INSERT INTO tb_admin_login_log
+            (admin_id, try_ip, success_yn, fail_reason, reg_date)
+        VALUES
+            (#{adminId}, #{tryIp}, #{successYn}, #{failReason}, NOW())
     </insert>
 
 </mapper>

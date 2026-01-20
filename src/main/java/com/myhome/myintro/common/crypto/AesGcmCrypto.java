@@ -28,6 +28,18 @@ public class AesGcmCrypto {
         }
     }
 
+    public String encryptToBase64(String plain) {
+        if (plain == null) return null;
+        byte[] enc = encryptToBytes(plain);   // 기존 메서드(byte[]) 재사용
+        return Base64.getEncoder().encodeToString(enc);
+    }
+
+    public String decryptFromBase64(String cipherBase64) {
+        if (cipherBase64 == null) return null;
+        byte[] enc = Base64.getDecoder().decode(cipherBase64);
+        return decryptFromBytes(enc);         // 기존 메서드(String) 또는 bytes->String 복호 메서드 사용
+    }
+
     /** 결과 포맷: [IV(12)][CIPHERTEXT+TAG] */
     public byte[] encryptToBytes(String plainText) {
         if (plainText == null) return null;

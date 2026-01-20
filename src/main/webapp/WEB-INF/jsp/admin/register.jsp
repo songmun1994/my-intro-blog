@@ -34,7 +34,7 @@
 
     <div class="field">
         <label for="adminPassword">비밀번호</label><br/>
-        <input id="adminPassword" name="adminPassword" type="password" maxlength="100" required
+        <input id="adminPassword" name="inputPassword" type="password" maxlength="100" required
                autocomplete="new-password" />
         <div class="hint">최소 10자, 영문+숫자 필수, 특수문자 권장</div>
     </div>
