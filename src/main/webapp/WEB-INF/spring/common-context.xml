@@ -8,10 +8,8 @@
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- ✅ properties (AES 키 포함) -->
     <context:property-placeholder location="classpath:db_connect.properties"/>
 
-    <!-- ✅ Root 컨텍스트는 service/mapper/crypto만 스캔하고, Controller(web)는 제외 -->
     <context:component-scan base-package="com.myhome.myintro">
         <context:exclude-filter type="regex" expression="com\.myhome\.myintro\.web\..*"/>
     </context:component-scan>
@@ -31,6 +29,13 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="mapperLocations" value="classpath*:mappers/**/*.xml" />
+
+        <property name="configuration">
+            <bean class="org.apache.ibatis.session.Configuration">
+                <property name="mapUnderscoreToCamelCase" value="true"/>
+            </bean>
+        </property>
+
     </bean>
 
     <!-- MyBatis Mapper Scan -->
@@ -43,7 +48,6 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <!-- ✅ @Transactional 동작하게 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>

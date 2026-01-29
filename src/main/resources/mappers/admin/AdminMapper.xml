@@ -50,16 +50,16 @@
             parameterType="com.myhome.myintro.admin.dto.AdminDTO"
             resultType="com.myhome.myintro.admin.dto.AdminDTO">
         SELECT
-            admin_idx        AS adminIdx,
-            admin_id         AS adminId,
-            admin_name         AS adminName,
-            admin_email         AS adminEmail,
-            admin_password   AS adminPassword,
-            admin_group      AS adminGroup,
-            use_yn           AS useYn,
-            del_yn           AS delYn,
-            login_fail_cnt   AS loginFailCnt,
-            last_login_date  AS lastLoginDate
+            admin_idx,
+            admin_id,
+            admin_name,
+            admin_email,
+            admin_password,
+            admin_group,
+            use_yn,
+            del_yn,
+            login_fail_cnt ,
+            last_login_date
         FROM tb_admin
         WHERE admin_id = #{adminId}
           AND del_yn = 'N'

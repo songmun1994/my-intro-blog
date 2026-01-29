@@ -24,7 +24,7 @@
 
 <p id="clientError" class="error" style="display:none;"></p>
 
-<form id="regForm" method="post" action="<%=request.getContextPath()%>/admin/register" novalidate>
+<form id="regForm" method="post" action="<%=request.getContextPath()%>/admin/register" novalidate accept-charset="UTF-8">
     <div class="field">
         <label for="adminId">관리자 ID</label><br/>
         <input id="adminId" name="adminId" type="text" maxlength="50" required
