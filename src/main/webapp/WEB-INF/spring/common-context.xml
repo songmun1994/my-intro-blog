@@ -35,7 +35,7 @@
                 <property name="mapUnderscoreToCamelCase" value="true"/>
             </bean>
         </property>
-
+        <property name="typeAliasesPackage" value="com.myhome.myintro.admin.dto" />
     </bean>
 
     <!-- MyBatis Mapper Scan -->

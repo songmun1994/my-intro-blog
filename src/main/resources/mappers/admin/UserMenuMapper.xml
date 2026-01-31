@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myhome.myintro.admin.mapper.UserMenuMapper">
+
+    <!-- 관리자 메뉴 목록 -->
+    <select id="selectAdminMenuList" parameterType="UserMenuDTO" resultType="UserMenuDTO">
+        SELECT
+        menu_idx,
+        menu_id,
+        parent_menu_idx,
+        menu_depth,
+        sort_no,
+        menu_name,
+        menu_desc,
+        page_title,
+        page_keyword,
+        menu_type,
+        menu_url,
+        expose_yn,
+        use_yn,
+        del_yn
+        FROM tb_user_menu
+        WHERE del_yn = 'N'
+        ORDER BY menu_depth ASC, sort_no ASC
+    </select>
+
+    <!-- 메뉴 등록 -->
+    <insert id="registerMenu" parameterType="UserMenuDTO">
+        INSERT INTO tb_user_menu (
+        menu_id,
+        parent_menu_idx,
+        menu_depth,
+        sort_no,
+        menu_name,
+        menu_desc,
+        page_title,
+        page_keyword,
+        menu_type,
+        menu_url,
+        expose_yn,
+        use_yn,
+        del_yn,
+        reg_date,
+        reg_idx,
+        reg_id,
+        reg_name
+        )
+        VALUES (
+        #{menuId},
+        <choose>
+            <when test="parentMenuIdx != null and parentMenuIdx != ''">
+                #{parentMenuIdx}
+            </when>
+            <otherwise>
+                NULL
+            </otherwise>
+        </choose>,
+        <choose>
+            <when test="menuDepth != null and menuDepth != ''">
+                #{menuDepth}
+            </when>
+            <otherwise>
+                1
+            </otherwise>
+        </choose>,
+        <choose>
+            <when test="sortNo != null and sortNo != ''">
+                #{sortNo}
+            </when>
+            <otherwise>
+                0
+            </otherwise>
+        </choose>,
+        #{menuName},
+        #{menuDesc},
+        #{pageTitle},
+        #{pageKeyword},
+        #{menuType},
+        #{menuUrl},
+        #{exposeYn},
+        'Y',
+        'N',
+        NOW(),
+        #{regIdx},
+        #{regId},
+        #{regName}
+        )
+    </insert>
+
+
+    <!-- 메뉴 수정 -->
+    <update id="modifyMenu" parameterType="UserMenuDTO">
+        UPDATE tb_user_menu
+        SET
+        menu_name = #{menuName},
+        menu_desc = #{menuDesc},
+        page_title = #{pageTitle},
+        page_keyword = #{pageKeyword},
+        menu_type = #{menuType},
+        menu_url  = #{menuUrl},
+        expose_yn = #{exposeYn},
+        parent_menu_idx =
+        <choose>
+            <when test="parentMenuIdx != null and parentMenuIdx != ''">
+                #{parentMenuIdx}
+            </when>
+            <otherwise>
+                NULL
+            </otherwise>
+        </choose>,
+        menu_depth =
+        <choose>
+            <when test="menuDepth != null and menuDepth != ''">
+                #{menuDepth}
+            </when>
+            <otherwise>
+                menu_depth
+            </otherwise>
+        </choose>,
+        sort_no =
+        <choose>
+            <when test="sortNo != null and sortNo != ''">
+                #{sortNo}
+            </when>
+            <otherwise>
+                sort_no
+            </otherwise>
+        </choose>
+        WHERE menu_idx = #{menuIdx}
+    </update>
+
+
+    <!-- 메뉴 삭제 -->
+    <update id="deleteUserMenu" parameterType="UserMenuDTO">
+        UPDATE tb_user_menu
+        SET del_yn = 'Y',
+        mod_date = NOW(),
+        mod_idx = #{modIdx},
+        mod_id = #{modId},
+        mod_name = #{modName}
+        WHERE menu_idx = #{menuIdx}
+    </update>
+
+</mapper>
