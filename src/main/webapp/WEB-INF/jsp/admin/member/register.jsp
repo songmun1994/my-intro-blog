@@ -3,70 +3,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <title>Admin Register</title>
-    <style>
-        .field { margin: 10px 0; }
-        .error { color: #d00; margin: 8px 0; }
-        .hint { color: #666; font-size: 12px; margin-top: 4px; }
-        label { font-weight: 600; }
-        input { padding: 6px 8px; width: 320px; max-width: 100%; }
-        button { padding: 8px 14px; cursor: pointer; }
-    </style>
+    <%@ include file="/WEB-INF/jsp/admin/include/title.jsp" %>
 </head>
 <body>
 
-<h1>관리자 등록</h1>
+<%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
+<div class="admin-container">
+    <%@ include file="/WEB-INF/jsp/admin/include/left.jsp" %>
+        <main class="admin-content">
+        <h1>관리자 등록</h1>
+        <c:if test="${not empty error}">
+            <p class="error">${error}</p>
+        </c:if>
 
-<c:if test="${not empty error}">
-    <p class="error">${error}</p>
-</c:if>
+        <p id="clientError" class="error" style="display:none;"></p>
 
-<p id="clientError" class="error" style="display:none;"></p>
+        <form id="regForm" method="post" action="<%=request.getContextPath()%>/admin/register" novalidate accept-charset="UTF-8">
+            <div class="field">
+                <label for="adminId">관리자 ID</label><br/>
+                <input id="adminId" name="adminId" type="text" maxlength="50" required
+                       autocomplete="username" />
+                <div class="hint">영문/숫자/._- 4~20자 권장</div>
+            </div>
 
-<form id="regForm" method="post" action="<%=request.getContextPath()%>/admin/register" novalidate accept-charset="UTF-8">
-    <div class="field">
-        <label for="adminId">관리자 ID</label><br/>
-        <input id="adminId" name="adminId" type="text" maxlength="50" required
-               autocomplete="username" />
-        <div class="hint">영문/숫자/._- 4~20자 권장</div>
-    </div>
+            <div class="field">
+                <label for="adminPassword">비밀번호</label><br/>
+                <input id="adminPassword" name="inputPassword" type="password" maxlength="100" required
+                       autocomplete="new-password" />
+                <div class="hint">최소 10자, 영문+숫자 필수, 특수문자 권장</div>
+            </div>
 
-    <div class="field">
-        <label for="adminPassword">비밀번호</label><br/>
-        <input id="adminPassword" name="inputPassword" type="password" maxlength="100" required
-               autocomplete="new-password" />
-        <div class="hint">최소 10자, 영문+숫자 필수, 특수문자 권장</div>
-    </div>
+            <div class="field">
+                <label for="adminPassword2">비밀번호 확인</label><br/>
+                <input id="adminPassword2" type="password" maxlength="100" required
+                       autocomplete="new-password" />
+            </div>
 
-    <div class="field">
-        <label for="adminPassword2">비밀번호 확인</label><br/>
-        <input id="adminPassword2" type="password" maxlength="100" required
-               autocomplete="new-password" />
-    </div>
+            <div class="field">
+                <label for="adminName">이름</label><br/>
+                <input id="adminName" name="adminName" type="text" maxlength="50" />
+            </div>
 
-    <div class="field">
-        <label for="adminName">이름</label><br/>
-        <input id="adminName" name="adminName" type="text" maxlength="50" />
-    </div>
+            <div class="field">
+                <label for="adminGroup">그룹</label><br/>
+                <input id="adminGroup" name="adminGroup" type="text" maxlength="50" value="SUPER" />
+            </div>
 
-    <div class="field">
-        <label for="adminGroup">그룹</label><br/>
-        <input id="adminGroup" name="adminGroup" type="text" maxlength="50" value="SUPER" />
-    </div>
+            <div class="field">
+                <label for="adminEmail">이메일</label><br/>
+                <input id="adminEmail" name="adminEmail" type="email" maxlength="100" />
+            </div>
 
-    <div class="field">
-        <label for="adminEmail">이메일</label><br/>
-        <input id="adminEmail" name="adminEmail" type="email" maxlength="100" />
-    </div>
+            <button id="submitBtn" type="submit">등록</button>
+        </form>
 
-    <button id="submitBtn" type="submit">등록</button>
-</form>
-
-<hr/>
-<p><a href="<%=request.getContextPath()%>/admin/login">관리자 로그인</a></p>
-
-<!-- ✅ 스크립트는 최하단 -->
+        <p><a href="<%=request.getContextPath()%>/admin/login">관리자 로그인</a></p>
+    </main>
+</div>
+<%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
 <script>
     (function () {
         'use strict';
@@ -172,6 +166,5 @@
         });
     })();
 </script>
-
 </body>
 </html>

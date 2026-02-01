@@ -19,7 +19,7 @@ public class AdminRegisterController {
         this.adminService = adminService;
     }
 
-    @GetMapping("/admin/register")
+    @GetMapping("/admin/member/register")
     public String form(Model model, HttpSession session, HttpServletRequest request) {
         if (!AdminLoginUtil.isLogin(session)) {
             model.addAttribute("msg", "로그인 후 이용해주세요.");
@@ -27,7 +27,9 @@ public class AdminRegisterController {
             return "common/alert";
         }
 
-        return "admin/register";
+        model.addAttribute("currentMenu", "MEMBER");
+
+        return "admin/member/register";
     }
 
     @PostMapping("/admin/register")
@@ -39,12 +41,13 @@ public class AdminRegisterController {
                 model.addAttribute("redirectUrl", request.getContextPath() + "/admin/login");
                 return "common/alert";
             }
-
+            model.addAttribute("currentMenu", "MEMBER");
             adminService.registerAdmin(dto);
-            return "redirect:/admin/login";
+            return "redirect:/admin/member/list";
         } catch (Exception e) {
             model.addAttribute("error", e.getMessage());
-            return "admin/register";
+            model.addAttribute("currentMenu", "MEMBER");
+            return "admin/member/register";
         }
     }
 }

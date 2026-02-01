@@ -1,0 +1,40 @@
+/* 전체 레이아웃 */
+.admin-container {
+    display: flex;
+    min-height: calc(100vh - 60px); /* header 높이 제외 */
+}
+
+/* 왼쪽 메뉴 */
+.admin-left {
+    width: 220px;
+    background: #f8f9fa;
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+/* 왼쪽 메뉴 링크 */
+.admin-left a {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+    text-decoration: none;
+}
+
+.admin-left a:hover {
+    background: #e9ecef;
+}
+.admin-left .list-group-item.active {
+    background: #212529;
+}
+
+.admin-left .list-group-item.active a {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* 오른쪽 컨텐츠 */
+.admin-content {
+    flex: 1;
+    padding: 24px;
+    background: #fff;
+}
