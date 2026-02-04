@@ -10,7 +10,7 @@
             <a class="nav-link text-white" href="<c:url value='/admin/member/list'/>">관리자관리</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="<c:url value='/admin/menu/list'/>">메뉴관리</a>
+            <a class="nav-link text-white" href="<c:url value='/admin/menu/manage'/>">메뉴관리</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-white" href="#">게시판 관리</a>
