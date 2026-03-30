@@ -11,12 +11,13 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/lang/summernote-ko-KR.js"></script>
 </head>
 <body>
-    <%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
-
-    <div class="admin-container">
+    <div class="admin-wrapper">
         <%@ include file="/WEB-INF/jsp/admin/include/left.jsp" %>
 
-        <main class="admin-content">
+        <div class="admin-main">
+            <%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
+
+            <main class="admin-content">
             <h1>메뉴 콘텐츠 작성 (메뉴ID: ${menuId})</h1>
             
             <form action="${cxt}/admin/content/save" method="post" id="editorForm">
@@ -29,10 +30,10 @@
                 <button type="submit" style="padding: 10px 20px; cursor: pointer;">저장하기</button>
                 <a href="${cxt}/admin/menu/manage" style="margin-left: 10px; display: inline-block;">취소 및 목록으로</a>
             </form>
-        </main>
+            </main>
+            <%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
+        </div>
     </div>
-
-    <%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
 
     <script>
         $(document).ready(function() {

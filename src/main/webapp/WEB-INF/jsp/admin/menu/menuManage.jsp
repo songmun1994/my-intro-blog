@@ -6,12 +6,13 @@
     <%@ include file="/WEB-INF/jsp/admin/include/title.jsp" %>
 </head>
 <body>
-    <%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
-
-    <div class="admin-container">
+    <div class="admin-wrapper">
         <%@ include file="/WEB-INF/jsp/admin/include/left.jsp" %>
 
-        <main class="admin-content">
+        <div class="admin-main">
+            <%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
+
+            <main class="admin-content">
             <h1>사용자 메뉴 관리</h1>
 
             <div class="page-actions">
@@ -45,22 +46,25 @@
                         <td>${m.menuType}</td>
                         <td>${m.exposeYn}</td>
                         <td>
-                            <a href="${cxt}/admin/menu/form?menuIdx=${m.menuIdx}"
-                               class="btn btn-edit">수정</a>
-                            <c:if test="${m.menuType eq 'HTML'}">
-                                <a href="${cxt}/admin/content/edit?menuId=${m.menuId}"
-                                   class="btn btn-primary">내용작성</a>
-                            </c:if>
-                            <a href="${cxt}/admin/menu/form?parentMenuIdx=${m.menuIdx}&menuDepth=${m.menuDepth + 1}"
-                               class="btn btn-sub">하위추가</a>
+                            <div class="btn-group">
+                                <a href="${cxt}/admin/menu/form?menuIdx=${m.menuIdx}"
+                                   class="btn btn-edit">수정</a>
+                                <c:if test="${m.menuType eq 'HTML'}">
+                                    <a href="${cxt}/admin/content/edit?menuId=${m.menuId}"
+                                       class="btn btn-primary">내용작성</a>
+                                </c:if>
+                                <a href="${cxt}/admin/menu/form?parentMenuIdx=${m.menuIdx}&menuDepth=${m.menuDepth + 1}"
+                                   class="btn btn-sub">하위추가</a>
+                            </div>
                         </td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
 
-        </main>
+            </main>
+            <%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
+        </div>
     </div>
-    <%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
 </body>
 </html>

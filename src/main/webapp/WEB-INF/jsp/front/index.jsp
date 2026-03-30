@@ -7,8 +7,12 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/jsp/front/include/header.jsp" %>
-<div style="padding: 20px;">
-    <h1>✅ Front Index</h1>
-<p>나를 소개하는 블로그형 메인 페이지</p>
+
+<main class="front-main">
+    <section class="hero-section">
+        <h1>Welcome to My Space</h1>
+        <p>A passionate developer sharing stories, ideas, and creations. Explore my journey and the code behind it.</p>
+    </section>
+</main>
 </body>
 </html>

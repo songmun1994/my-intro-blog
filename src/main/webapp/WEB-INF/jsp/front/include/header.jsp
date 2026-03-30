@@ -4,23 +4,24 @@
     String currentContext = request.getContextPath();
     request.setAttribute("cxt", currentContext);
 %>
-<header style="background-color: #f8f9fa; padding: 15px 30px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center;">
-    <div>
-        <h2 style="margin: 0;"><a href="${cxt}/" style="text-decoration: none; color: #333;">My Intro Blog</a></h2>
+<link rel="stylesheet" href="${cxt}/resources/css/front.css?v=2">
+<header class="front-header">
+    <div class="front-logo">
+        <a href="${cxt}/">MY INTRO BLOG</a>
     </div>
     <nav>
-        <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 20px;">
+        <ul class="front-nav">
             <c:forEach var="menu" items="${globalMenuList}">
                 <li>
                     <c:choose>
                         <c:when test="${menu.menuType eq 'HTML'}">
-                            <a href="${cxt}/page/${menu.menuId}" style="text-decoration: none; color: #555; font-weight: bold;">${menu.menuName}</a>
+                            <a href="${cxt}/page/${menu.menuId}">${menu.menuName}</a>
                         </c:when>
                         <c:when test="${menu.menuType eq 'BOARD'}">
-                            <a href="${cxt}/board/${menu.menuId}" style="text-decoration: none; color: #555; font-weight: bold;">${menu.menuName}</a>
+                            <a href="${cxt}/board/${menu.menuId}">${menu.menuName}</a>
                         </c:when>
                         <c:when test="${menu.menuType eq 'URL'}">
-                            <a href="${menu.menuUrl}" style="text-decoration: none; color: #555; font-weight: bold;">${menu.menuName}</a>
+                            <a href="${menu.menuUrl}">${menu.menuName}</a>
                         </c:when>
                         <c:otherwise>
                             <span>${menu.menuName}</span>

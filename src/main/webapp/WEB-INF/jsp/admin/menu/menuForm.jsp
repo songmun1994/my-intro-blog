@@ -6,12 +6,13 @@
     <%@ include file="/WEB-INF/jsp/admin/include/title.jsp" %>
 </head>
 <body>
-    <%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
-
-    <div class="admin-container">
+    <div class="admin-wrapper">
         <%@ include file="/WEB-INF/jsp/admin/include/left.jsp" %>
 
-        <main class="admin-content">
+        <div class="admin-main">
+            <%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
+
+            <main class="admin-content">
             <h1>메뉴 ${empty menu.menuIdx ? '등록' : '수정'}</h1>
 
             <form method="post" action="${cxt}/admin/menu/save" id="menuForm">
@@ -62,10 +63,10 @@
                 <a href="${cxt}/admin/menu/manage">목록</a>
 
             </form>
-        </main>
+            </main>
+            <%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
+        </div>
     </div>
-
-    <%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
 
     <script>
         (function(){

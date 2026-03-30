@@ -9,9 +9,11 @@
 <body>
     <%@ include file="/WEB-INF/jsp/front/include/header.jsp" %>
     
-    <div style="padding: 30px; max-width: 1000px; margin: 0 auto;">
-        <!-- 에디터로 작성한 HTML 콘텐츠 출력 ('escapeXml' 필수 false) -->
-        <c:out value="${pageContent}" escapeXml="false" />
-    </div>
+    <main class="front-main">
+        <div class="page-container">
+            <!-- 에디터로 작성한 HTML 콘텐츠 출력 ('escapeXml' 필수 false) -->
+            <c:out value="${pageContent}" escapeXml="false" />
+        </div>
+    </main>
 </body>
 </html>

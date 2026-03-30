@@ -7,9 +7,11 @@
 </head>
 <body>
 
-<%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
-<div class="admin-container">
+<div class="admin-wrapper">
     <%@ include file="/WEB-INF/jsp/admin/include/left.jsp" %>
+
+    <div class="admin-main">
+        <%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
         <main class="admin-content">
         <h1>관리자 등록</h1>
         <c:if test="${not empty error}">
@@ -58,9 +60,10 @@
         </form>
 
         <p><a href="<%=request.getContextPath()%>/admin/login">관리자 로그인</a></p>
-    </main>
+        </main>
+        <%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
+    </div>
 </div>
-<%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
 <script>
     (function () {
         'use strict';

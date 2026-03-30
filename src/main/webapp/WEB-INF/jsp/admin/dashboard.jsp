@@ -7,11 +7,13 @@
 </head>
 <body>
 
-<%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
-
-<div class="admin-container">
-
-    <main class="admin-content">
+<div class="admin-wrapper">
+    <%@ include file="/WEB-INF/jsp/admin/include/left.jsp" %>
+    
+    <div class="admin-main">
+        <%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
+        
+        <main class="admin-content">
         <h1>관리자 대시보드</h1>
         <p>환영합니다, ${sessionScope.LOGIN_ADMIN_ID} 님</p>
 
@@ -19,10 +21,11 @@
             <p>로그인 통계 요약 (예정)</p>
             <p>최근 관리자 활동 로그 (예정)</p>
         </div>
-    </main>
+        </main>
+        
+        <%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
+    </div>
 </div>
-
-<%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>
 
 </body>
 </html>
