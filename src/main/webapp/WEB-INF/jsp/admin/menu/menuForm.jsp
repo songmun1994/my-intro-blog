@@ -9,6 +9,8 @@
     <%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
 
     <div class="admin-container">
+        <%@ include file="/WEB-INF/jsp/admin/include/left.jsp" %>
+
         <main class="admin-content">
             <h1>메뉴 ${empty menu.menuIdx ? '등록' : '수정'}</h1>
 

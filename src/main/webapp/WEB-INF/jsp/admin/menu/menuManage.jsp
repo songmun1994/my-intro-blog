@@ -9,59 +9,56 @@
     <%@ include file="/WEB-INF/jsp/admin/include/header.jsp" %>
 
     <div class="admin-container">
+        <%@ include file="/WEB-INF/jsp/admin/include/left.jsp" %>
 
         <main class="admin-content">
             <h1>사용자 메뉴 관리</h1>
 
-            <div style="margin-bottom:15px;">
-                <a href="${pageContext.request.contextPath}/admin/menu/form"
-                   class="btn">➕ 최상위 메뉴 등록</a>
+            <div class="page-actions">
+                <a href="${cxt}/admin/menu/form" class="btn btn-primary">
+                    최상위 메뉴 등록
+                </a>
             </div>
 
-            <ul>
-                <c:forEach var="m1" items="${menuList}">
-                    <c:if test="${m1.menuDepth eq '1'}">
-                        <li>
-                            <strong>
-                                <a href="${cxt}/admin/menu/form?menuIdx=${m1.menuIdx}">
-                                        ${m1.menuName}
-                                </a>
-                            </strong>
-                            <a href="${cxt}/admin/menu/form?parentMenuIdx=${m1.menuIdx}&menuDepth=2">
-                                [하위메뉴 추가]
-                            </a>
 
-                            <ul>
-                                <c:forEach var="m2" items="${menuList}">
-                                    <c:if test="${m2.parentMenuIdx eq m1.menuIdx}">
-                                        <li>
-                                            <a href="${cxt}/admin/menu/form?menuIdx=${m2.menuIdx}">
-                                                    ${m2.menuName}
-                                            </a>
-                                            <a href="${cxt}/admin/menu/form?parentMenuIdx=${m2.menuIdx}&menuDepth=3">
-                                                [하위메뉴 추가]
-                                            </a>
-
-                                            <ul>
-                                                <c:forEach var="m3" items="${menuList}">
-                                                    <c:if test="${m3.parentMenuIdx eq m2.menuIdx}">
-                                                        <li>
-                                                            <a href="${cxt}/admin/menu/form?menuIdx=${m3.menuIdx}">
-                                                                    ${m3.menuName}
-                                                            </a>
-                                                        </li>
-                                                    </c:if>
-                                                </c:forEach>
-                                            </ul>
-
-                                        </li>
-                                    </c:if>
-                                </c:forEach>
-                            </ul>
-                        </li>
-                    </c:if>
+            <table class="admin-table">
+                <thead>
+                <tr>
+                    <th>메뉴명</th>
+                    <th>메뉴 ID</th>
+                    <th>뎁스</th>
+                    <th>타입</th>
+                    <th>노출</th>
+                    <th>관리</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="m" items="${menuList}">
+                    <tr>
+                        <td>
+                            <c:if test="${m.menuDepth eq 2}">└ </c:if>
+                            <c:if test="${m.menuDepth eq 3}">&nbsp;&nbsp;└ </c:if>
+                                ${m.menuName}
+                        </td>
+                        <td>${m.menuId}</td>
+                        <td>${m.menuDepth}</td>
+                        <td>${m.menuType}</td>
+                        <td>${m.exposeYn}</td>
+                        <td>
+                            <a href="${cxt}/admin/menu/form?menuIdx=${m.menuIdx}"
+                               class="btn btn-edit">수정</a>
+                            <c:if test="${m.menuType eq 'HTML'}">
+                                <a href="${cxt}/admin/content/edit?menuId=${m.menuId}"
+                                   class="btn btn-primary">내용작성</a>
+                            </c:if>
+                            <a href="${cxt}/admin/menu/form?parentMenuIdx=${m.menuIdx}&menuDepth=${m.menuDepth + 1}"
+                               class="btn btn-sub">하위추가</a>
+                        </td>
+                    </tr>
                 </c:forEach>
-            </ul>
+                </tbody>
+            </table>
+
         </main>
     </div>
     <%@ include file="/WEB-INF/jsp/admin/include/footer.jsp" %>

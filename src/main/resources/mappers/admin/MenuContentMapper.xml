@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myhome.myintro.admin.mapper.MenuContentMapper">
+
+    <select id="selectContentByMenuId" parameterType="String" resultType="MenuContentDTO">
+        SELECT content_idx, menu_id, html_content, reg_date, mod_date
+        FROM tb_menu_content
+        WHERE menu_id = #{menuId}
+    </select>
+
+    <insert id="insertContent" parameterType="MenuContentDTO">
+        INSERT INTO tb_menu_content (
+            menu_id, html_content, reg_date
+        ) VALUES (
+            #{menuId}, #{htmlContent}, NOW()
+        )
+    </insert>
+
+    <update id="updateContent" parameterType="MenuContentDTO">
+        UPDATE tb_menu_content
+        SET html_content = #{htmlContent},
+            mod_date = NOW()
+        WHERE menu_id = #{menuId}
+    </update>
+
+</mapper>

@@ -6,7 +6,9 @@
     <title>My Intro Blog</title>
 </head>
 <body>
-<h1>✅ Front Index</h1>
+<%@ include file="/WEB-INF/jsp/front/include/header.jsp" %>
+<div style="padding: 20px;">
+    <h1>✅ Front Index</h1>
 <p>나를 소개하는 블로그형 메인 페이지</p>
 </body>
 </html>

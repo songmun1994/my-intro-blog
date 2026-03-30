@@ -1,0 +1,466 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "my-intro-blog-test",
+        "directory": "C:\\Users\\songm\\IdeaProjects\\myhome\\my-intro-blog",
+        "workspaceDir": "C:\\Users\\songm\\IdeaProjects\\myhome\\my-intro-blog",
+        "sources": [
+            
+        ],
+        "dependencies": [
+            "my-intro-blog"
+        ],
+        "classpath": [
+            "C:\\Users\\songm\\IdeaProjects\\myhome\\my-intro-blog\\target\\test-classes",
+            "C:\\Users\\songm\\IdeaProjects\\myhome\\my-intro-blog\\target\\classes",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-webmvc\\5.3.34\\spring-webmvc-5.3.34.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-aop\\5.3.34\\spring-aop-5.3.34.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-beans\\5.3.34\\spring-beans-5.3.34.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-context\\5.3.34\\spring-context-5.3.34.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-core\\5.3.34\\spring-core-5.3.34.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-jcl\\5.3.34\\spring-jcl-5.3.34.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-expression\\5.3.34\\spring-expression-5.3.34.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-web\\5.3.34\\spring-web-5.3.34.jar",
+            "C:\\Users\\songm\\.m2\\repository\\javax\\servlet\\jstl\\1.2\\jstl-1.2.jar",
+            "C:\\Users\\songm\\.m2\\repository\\javax\\servlet\\javax.servlet-api\\4.0.1\\javax.servlet-api-4.0.1.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\slf4j\\slf4j-api\\2.0.13\\slf4j-api-2.0.13.jar",
+            "C:\\Users\\songm\\.m2\\repository\\ch\\qos\\logback\\logback-classic\\1.5.6\\logback-classic-1.5.6.jar",
+            "C:\\Users\\songm\\.m2\\repository\\ch\\qos\\logback\\logback-core\\1.5.6\\logback-core-1.5.6.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-jdbc\\5.3.34\\spring-jdbc-5.3.34.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-tx\\5.3.34\\spring-tx-5.3.34.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\mybatis\\mybatis\\3.5.16\\mybatis-3.5.16.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\mybatis\\mybatis-spring\\2.1.2\\mybatis-spring-2.1.2.jar",
+            "C:\\Users\\songm\\.m2\\repository\\com\\zaxxer\\HikariCP\\5.1.0\\HikariCP-5.1.0.jar",
+            "C:\\Users\\songm\\.m2\\repository\\com\\mysql\\mysql-connector-j\\8.4.0\\mysql-connector-j-8.4.0.jar",
+            "C:\\Users\\songm\\.m2\\repository\\com\\google\\protobuf\\protobuf-java\\3.25.1\\protobuf-java-3.25.1.jar",
+            "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\security\\spring-security-crypto\\5.8.13\\spring-security-crypto-5.8.13.jar"
+        ],
+        "out": "C:\\Users\\songm\\IdeaProjects\\myhome\\my-intro-blog\\target",
+        "classesDir": "C:\\Users\\songm\\IdeaProjects\\myhome\\my-intro-blog\\target\\test-classes",
+        "resources": [
+            "C:\\Users\\songm\\IdeaProjects\\myhome\\my-intro-blog\\src\\test\\resources"
+        ],
+        "java": {
+            "options": [
+                "-g",
+                "-encoding",
+                "UTF-8"
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework",
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "utest.runner.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "mill.testng.TestNGFramework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    {
+                        "args": [
+                            "-v",
+                            "-a"
+                        ],
+                        "framework": {
+                            "names": [
+                                "com.novocode.junit.JUnitFramework"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "C:\\Users\\songm\\AppData\\Local\\Coursier\\cache\\arc\\https\\github.com\\adoptium\\temurin17-binaries\\releases\\download\\jdk-17.0.18%252B8\\OpenJDK17U-jdk_x64_windows_hotspot_17.0.18_8.zip\\jdk-17.0.18+8",
+                "options": [
+                    
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.springframework",
+                    "name": "spring-aop",
+                    "version": "5.3.34",
+                    "artifacts": [
+                        {
+                            "name": "spring-aop",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-aop\\5.3.34\\spring-aop-5.3.34.jar"
+                        },
+                        {
+                            "name": "spring-aop",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-aop\\5.3.34\\spring-aop-5.3.34-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.mybatis",
+                    "name": "mybatis-spring",
+                    "version": "2.1.2",
+                    "artifacts": [
+                        {
+                            "name": "mybatis-spring",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\mybatis\\mybatis-spring\\2.1.2\\mybatis-spring-2.1.2.jar"
+                        },
+                        {
+                            "name": "mybatis-spring",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\mybatis\\mybatis-spring\\2.1.2\\mybatis-spring-2.1.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "ch.qos.logback",
+                    "name": "logback-core",
+                    "version": "1.5.6",
+                    "artifacts": [
+                        {
+                            "name": "logback-core",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\ch\\qos\\logback\\logback-core\\1.5.6\\logback-core-1.5.6.jar"
+                        },
+                        {
+                            "name": "logback-core",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\ch\\qos\\logback\\logback-core\\1.5.6\\logback-core-1.5.6-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "ch.qos.logback",
+                    "name": "logback-classic",
+                    "version": "1.5.6",
+                    "artifacts": [
+                        {
+                            "name": "logback-classic",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\ch\\qos\\logback\\logback-classic\\1.5.6\\logback-classic-1.5.6.jar"
+                        },
+                        {
+                            "name": "logback-classic",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\ch\\qos\\logback\\logback-classic\\1.5.6\\logback-classic-1.5.6-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.springframework",
+                    "name": "spring-beans",
+                    "version": "5.3.34",
+                    "artifacts": [
+                        {
+                            "name": "spring-beans",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-beans\\5.3.34\\spring-beans-5.3.34.jar"
+                        },
+                        {
+                            "name": "spring-beans",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-beans\\5.3.34\\spring-beans-5.3.34-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.springframework",
+                    "name": "spring-webmvc",
+                    "version": "5.3.34",
+                    "artifacts": [
+                        {
+                            "name": "spring-webmvc",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-webmvc\\5.3.34\\spring-webmvc-5.3.34.jar"
+                        },
+                        {
+                            "name": "spring-webmvc",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-webmvc\\5.3.34\\spring-webmvc-5.3.34-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.springframework",
+                    "name": "spring-jcl",
+                    "version": "5.3.34",
+                    "artifacts": [
+                        {
+                            "name": "spring-jcl",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-jcl\\5.3.34\\spring-jcl-5.3.34.jar"
+                        },
+                        {
+                            "name": "spring-jcl",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-jcl\\5.3.34\\spring-jcl-5.3.34-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "javax.servlet",
+                    "name": "javax.servlet-api",
+                    "version": "4.0.1",
+                    "artifacts": [
+                        {
+                            "name": "javax.servlet-api",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\javax\\servlet\\javax.servlet-api\\4.0.1\\javax.servlet-api-4.0.1.jar"
+                        },
+                        {
+                            "name": "javax.servlet-api",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\javax\\servlet\\javax.servlet-api\\4.0.1\\javax.servlet-api-4.0.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.springframework",
+                    "name": "spring-web",
+                    "version": "5.3.34",
+                    "artifacts": [
+                        {
+                            "name": "spring-web",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-web\\5.3.34\\spring-web-5.3.34.jar"
+                        },
+                        {
+                            "name": "spring-web",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-web\\5.3.34\\spring-web-5.3.34-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.slf4j",
+                    "name": "slf4j-api",
+                    "version": "2.0.13",
+                    "artifacts": [
+                        {
+                            "name": "slf4j-api",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\slf4j\\slf4j-api\\2.0.13\\slf4j-api-2.0.13.jar"
+                        },
+                        {
+                            "name": "slf4j-api",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\slf4j\\slf4j-api\\2.0.13\\slf4j-api-2.0.13-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.springframework",
+                    "name": "spring-expression",
+                    "version": "5.3.34",
+                    "artifacts": [
+                        {
+                            "name": "spring-expression",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-expression\\5.3.34\\spring-expression-5.3.34.jar"
+                        },
+                        {
+                            "name": "spring-expression",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-expression\\5.3.34\\spring-expression-5.3.34-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.springframework",
+                    "name": "spring-jdbc",
+                    "version": "5.3.34",
+                    "artifacts": [
+                        {
+                            "name": "spring-jdbc",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-jdbc\\5.3.34\\spring-jdbc-5.3.34.jar"
+                        },
+                        {
+                            "name": "spring-jdbc",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-jdbc\\5.3.34\\spring-jdbc-5.3.34-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.zaxxer",
+                    "name": "HikariCP",
+                    "version": "5.1.0",
+                    "artifacts": [
+                        {
+                            "name": "HikariCP",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\com\\zaxxer\\HikariCP\\5.1.0\\HikariCP-5.1.0.jar"
+                        },
+                        {
+                            "name": "HikariCP",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\com\\zaxxer\\HikariCP\\5.1.0\\HikariCP-5.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.google.protobuf",
+                    "name": "protobuf-java",
+                    "version": "3.25.1",
+                    "artifacts": [
+                        {
+                            "name": "protobuf-java",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\com\\google\\protobuf\\protobuf-java\\3.25.1\\protobuf-java-3.25.1.jar"
+                        },
+                        {
+                            "name": "protobuf-java",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\com\\google\\protobuf\\protobuf-java\\3.25.1\\protobuf-java-3.25.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.mysql",
+                    "name": "mysql-connector-j",
+                    "version": "8.4.0",
+                    "artifacts": [
+                        {
+                            "name": "mysql-connector-j",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\com\\mysql\\mysql-connector-j\\8.4.0\\mysql-connector-j-8.4.0.jar"
+                        },
+                        {
+                            "name": "mysql-connector-j",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\com\\mysql\\mysql-connector-j\\8.4.0\\mysql-connector-j-8.4.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.mybatis",
+                    "name": "mybatis",
+                    "version": "3.5.16",
+                    "artifacts": [
+                        {
+                            "name": "mybatis",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\mybatis\\mybatis\\3.5.16\\mybatis-3.5.16.jar"
+                        },
+                        {
+                            "name": "mybatis",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\mybatis\\mybatis\\3.5.16\\mybatis-3.5.16-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.springframework.security",
+                    "name": "spring-security-crypto",
+                    "version": "5.8.13",
+                    "artifacts": [
+                        {
+                            "name": "spring-security-crypto",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\security\\spring-security-crypto\\5.8.13\\spring-security-crypto-5.8.13.jar"
+                        },
+                        {
+                            "name": "spring-security-crypto",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\security\\spring-security-crypto\\5.8.13\\spring-security-crypto-5.8.13-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "javax.servlet",
+                    "name": "jstl",
+                    "version": "1.2",
+                    "artifacts": [
+                        {
+                            "name": "jstl",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\javax\\servlet\\jstl\\1.2\\jstl-1.2.jar"
+                        },
+                        {
+                            "name": "jstl",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\javax\\servlet\\jstl\\1.2\\jstl-1.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.springframework",
+                    "name": "spring-context",
+                    "version": "5.3.34",
+                    "artifacts": [
+                        {
+                            "name": "spring-context",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-context\\5.3.34\\spring-context-5.3.34.jar"
+                        },
+                        {
+                            "name": "spring-context",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-context\\5.3.34\\spring-context-5.3.34-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.springframework",
+                    "name": "spring-core",
+                    "version": "5.3.34",
+                    "artifacts": [
+                        {
+                            "name": "spring-core",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-core\\5.3.34\\spring-core-5.3.34.jar"
+                        },
+                        {
+                            "name": "spring-core",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-core\\5.3.34\\spring-core-5.3.34-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.springframework",
+                    "name": "spring-tx",
+                    "version": "5.3.34",
+                    "artifacts": [
+                        {
+                            "name": "spring-tx",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-tx\\5.3.34\\spring-tx-5.3.34.jar"
+                        },
+                        {
+                            "name": "spring-tx",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\songm\\.m2\\repository\\org\\springframework\\spring-tx\\5.3.34\\spring-tx-5.3.34-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "test"
+        ]
+    }
+}
